@@ -7,8 +7,8 @@
 | Access | O(1) |
 | Search | O(N) |
 | Insertion | O(N) |
-| Appending | O(1) |
-| Deletion | (N) |
+| Append | O(1) |
+| Deletion | O(N) |
 
 ## How to compile
 
