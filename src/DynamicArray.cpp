@@ -4,8 +4,8 @@
 #include "DynamicArray.hpp"
 
 DynamicArray::DynamicArray(int initialSize) {
-    this->maxLength = initialSize;
-    this->array = (int*) malloc(this->maxLength * sizeof(int));
+    this->capacity = initialSize;
+    this->array = (int*) malloc(this->capacity * sizeof(int));
 }
 
 DynamicArray::~DynamicArray() {
@@ -14,13 +14,13 @@ DynamicArray::~DynamicArray() {
 
 // O(N) runtime
 void DynamicArray::doubleArray() {
-    this->maxLength *= 2;
-    int *newArray = (int*) malloc(this->maxLength * sizeof(int));
+    this->capacity *= 2;
+    int *newArray = (int*) malloc(this->capacity * sizeof(int));
     memcpy(newArray, this->array, this->length * sizeof(int));
     this->array = newArray;
 }
 
-int DynamicArray::getLength() {
+int DynamicArray::size() {
     return this->length;
 }
 
@@ -29,9 +29,13 @@ int DynamicArray::get(int index) {
     return this->array[index];
 }
 
+void DynamicArray::set(int index, int value) {
+    this->array[index] = value;
+}
+
 // O(1) (amortized) runtime
 void DynamicArray::append(int value) {
-    if (this->length == this->maxLength) {
+    if (this->length == this->capacity) {
         this->doubleArray();
     }
 
@@ -40,8 +44,8 @@ void DynamicArray::append(int value) {
 }
 
 // O(N) runtime
-void DynamicArray::insert(int value, int index) {
-    if (this->length == this->maxLength) {
+void DynamicArray::insert(int index, int value) {
+    if (this->length == this->capacity) {
         this->doubleArray();
     }
 

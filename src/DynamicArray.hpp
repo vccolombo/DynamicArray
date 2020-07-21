@@ -6,17 +6,18 @@
 class DynamicArray {
     int *array;
     int length = 0;
-    int maxLength;
+    int capacity;
 
     void doubleArray();
 
     public:
         DynamicArray(int initialSize = INIT_SIZE);
         ~DynamicArray();
-        int getLength();
+        int size();
         int get(int index);
+        void set(int index, int value);
         void append(int value);
-        void insert(int value, int index);
+        void insert(int index, int value);
         void remove(int index);
 };
 
