@@ -12,6 +12,7 @@ class DynamicArray {
 
     public:
         DynamicArray(int initialSize = INIT_SIZE);
+        ~DynamicArray();
         int getLength();
         int get(int index);
         void append(int value);

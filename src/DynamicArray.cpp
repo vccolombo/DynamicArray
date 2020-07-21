@@ -8,6 +8,10 @@ DynamicArray::DynamicArray(int initialSize) {
     this->array = (int*) malloc(this->maxLength * sizeof(int));
 }
 
+DynamicArray::~DynamicArray() {
+    free(this->array);
+}
+
 // O(N) runtime
 void DynamicArray::doubleArray() {
     this->maxLength *= 2;
