@@ -62,4 +62,14 @@ void DynamicArray::remove(int index) {
     for (size_t i = index; i < this->length - 1; i++) {
         this->array[i] = this->array[i + 1];
     }
+
+    this->length--;
+}
+
+bool DynamicArray::contains(int value) {
+    for (size_t i = 0; i < this->length; i++) {
+        if (this->array[i] == value) return true;
+    }
+    
+    return false;
 }

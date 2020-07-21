@@ -4,11 +4,12 @@
 
 | Operation | Runtime |
 |---|---|
-| Access | O(1) |
-| Search | O(N) |
-| Insertion | O(N) |
+| Get | O(1) |
+| Set | O(1) |
+| Contains | O(N) |
+| Insert | O(N) |
 | Append | O(1) |
-| Deletion | O(N) |
+| Remove | O(N) |
 
 ## How to compile
 

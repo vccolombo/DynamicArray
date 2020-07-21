@@ -8,7 +8,7 @@ int main() {
         array.append(i);
     }
     for (size_t i = 1; i < array.size(); i+=3) {
-        array.insert(i * 100, i);
+        array.insert(i, i * 100);
     }
     array.remove(0);
     for (size_t i = 0; i < array.size(); i++) {

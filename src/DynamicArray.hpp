@@ -19,6 +19,7 @@ class DynamicArray {
         void append(int value);
         void insert(int index, int value);
         void remove(int index);
+        bool contains(int value);
 };
 
 #endif
