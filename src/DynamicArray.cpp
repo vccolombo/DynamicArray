@@ -25,10 +25,16 @@ int DynamicArray::size() {
 }
 
 // O(1) runtime
+int &DynamicArray::operator[](int index) {
+    return this->array[index];
+}
+
+// O(1) runtime
 int DynamicArray::get(int index) {
     return this->array[index];
 }
 
+// O(1) runtime
 void DynamicArray::set(int index, int value) {
     this->array[index] = value;
 }
@@ -66,6 +72,7 @@ void DynamicArray::remove(int index) {
     this->length--;
 }
 
+// O(N) runtime
 bool DynamicArray::contains(int value) {
     for (size_t i = 0; i < this->length; i++) {
         if (this->array[i] == value) return true;

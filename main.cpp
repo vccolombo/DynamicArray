@@ -11,7 +11,8 @@ int main() {
         array.insert(i, i * 100);
     }
     array.remove(0);
+    array[4] = 123;
     for (size_t i = 0; i < array.size(); i++) {
-        printf("%d\n", array.get(i));
+        printf("%d\n", array[i]);
     }
 }

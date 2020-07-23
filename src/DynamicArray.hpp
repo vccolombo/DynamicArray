@@ -14,6 +14,7 @@ class DynamicArray {
         DynamicArray(int initialSize = INIT_SIZE);
         ~DynamicArray();
         int size();
+        int &operator[](int index);
         int get(int index);
         void set(int index, int value);
         void append(int value);
