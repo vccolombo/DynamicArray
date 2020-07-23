@@ -1,5 +1,7 @@
 # Dynamic Array in C++
 
+Dynamic Array in C++ with generics.
+
 ## Runtime
 
 | Operation | Runtime |
