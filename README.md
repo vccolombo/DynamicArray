@@ -14,5 +14,5 @@
 ## How to compile
 
 ```terminal
-$ g++ -o main.o -I ./src/ *.cpp src/*.cpp
+$ g++ -o main.o -I ./src/ *.cpp
 ```
