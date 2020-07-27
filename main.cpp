@@ -33,7 +33,23 @@ void stringArrayExample() {
     std::cout << "\n\n";
 }
 
+void clearArrayExample() {
+    DynamicArray<int> array(42);
+    for (size_t i = 0; i < 1331; i++) {
+        array.append(i);
+    }
+
+    while (!array.isEmpty()) {
+        std::cout << "Removing element with value " << array[0] << "\n";
+        array.remove(0);
+        std::cout << "Size: " << array.size() << " Capacity: " << array.capacity() << "\n";
+    }
+
+    std::cout << "\n";
+}
+
 int main() {
     intArrayExample();
     stringArrayExample();
+    clearArrayExample();
 }
