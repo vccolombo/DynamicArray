@@ -33,21 +33,24 @@ class DynamicArray {
 template <typename T>
 DynamicArray<T>::DynamicArray(int initialSize) {
     this->capacity = initialSize;
-    this->array = (T*) malloc(this->capacity * sizeof(T));
+    this->array = new T[initialSize];
 }
 
 template <typename T>
 DynamicArray<T>::~DynamicArray() {
-    free(this->array);
+    delete[] this->array;
 }
 
 // O(N) runtime
 template <typename T>
 void DynamicArray<T>::doubleArray() {
     this->capacity *= 2;
-    T *newArray = (T*) malloc(this->capacity * sizeof(T));
+    T* newArray = new T[this->capacity];
     memcpy(newArray, this->array, this->length * sizeof(T));
+    
+    T* temp = this->array;
     this->array = newArray;
+    delete[] temp;
 }
 
 template <typename T>

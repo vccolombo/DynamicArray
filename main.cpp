@@ -5,7 +5,7 @@
 
 void intArrayExample() {
     DynamicArray<int> array;
-    for (size_t i = 0; i < 10; i++) {
+    for (size_t i = 0; i < 10000; i++) {
         array.append(i);
     }
     for (size_t i = 1; i < array.size(); i+=3) {
@@ -16,7 +16,7 @@ void intArrayExample() {
     for (size_t i = 0; i < array.size(); i++) {
         std::cout << array[i] << " ";
     }
-    std::cout << "\n";
+    std::cout << "\n\n";
 }
 
 void stringArrayExample() {
@@ -30,7 +30,7 @@ void stringArrayExample() {
     for (size_t i = 0; i < array.size(); i++) {
         std::cout << array[i] << " ";
     }
-    std::cout << "\n";
+    std::cout << "\n\n";
 }
 
 int main() {
