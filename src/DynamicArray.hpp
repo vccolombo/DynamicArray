@@ -56,11 +56,12 @@ DynamicArray<T>::~DynamicArray() {
 // O(N) runtime
 template <typename T>
 void DynamicArray<T>::createArray(int size) {
-    if (this->mCapacity < MIN_CAPACITY) {
-        this->mCapacity = MIN_CAPACITY;
+    if (size < MIN_CAPACITY) {
+        size = MIN_CAPACITY;
     }
+    this->mCapacity = size;
 
-    T* newArray = new T[size];
+    T* newArray = new T[this->mCapacity];
     memcpy(newArray, this->array, this->mSize * sizeof(T));
 
     T* temp = this->array;
@@ -70,14 +71,12 @@ void DynamicArray<T>::createArray(int size) {
 
 template <typename T>
 void DynamicArray<T>::doubleArray() {
-    this->mCapacity *= 2;
-    this->createArray(this->mCapacity);
+    this->createArray(this->mCapacity * 2);
 }
 
 template <typename T>
 void DynamicArray<T>::shrinkArray() {
-    this->mCapacity /= 2;
-    this->createArray(this->mCapacity);
+    this->createArray(this->mCapacity / 2);
 }
 
 // O(1) runtime
